@@ -1,31 +1,87 @@
 {
     "hero": {
-        "title": "Vos produits préférés, livrés directement chez vous",
-        "subtitle": "Découvrez une sélection de produits de qualité premium avec une livraison rapide et des paiements sécurisés.",
-        "primaryCta": "Commencer vos achats",
-        "secondaryCta": "En savoir plus",
-        "imageAlt": "Section principale e-commerce"
+        "title": "Petit Trésors, Grands Bonheurs",
+        "description": "Câlins, sourires et couches : notre spécialité. Des solutions pratiques pour les parents, des rires pour les bébés",
+        "cta": "Nos Abonnements"
     },
-    "features": {
-        "title": "Pourquoi acheter chez nous ?",
+    "categories": {
+        "title": "Nous l'avons",
+        "description": "Vous pouvez gagner la confiance de quelqu’un par ce que vous dites et ce que vos actions montrent. Il existe trois types de confiance : la confiance dans la famille, la confiance dans un être cher ou un petit ami et la confiance dans les amis.",
         "items": {
-            "fastDelivery": {
-                "title": "Livraison rapide",
-                "desc": "Recevez vos commandes en quelques jours, pas en semaines."
+            "baby": {
+                "title": "Pour le Bébé",
+                "desc": "Un petit être tendre, plein de curiosité et de douceur.",
+                "cta": "Voir les produits"
             },
-            "topQuality": {
-                "title": "Qualité supérieure",
-                "desc": "Nous proposons uniquement les meilleurs produits de marques fiables."
+            "both": {
+                "title": "Pour vous deux",
+                "desc": "Un petit être tendre, plein de curiosité et de douceur.",
+                "cta": "Voir les produits"
             },
-            "securePayments": {
-                "title": "Paiements sécurisés",
-                "desc": "Vos informations de paiement sont cryptées et totalement protégées."
+            "mother": {
+                "title": "Pour la maman",
+                "desc": "Force silencieuse, créatrice de liens, nourricière bienveillante",
+                "cta": "Voir les produits"
             }
         }
     },
-    "cta": {
-        "title": "Rejoignez des milliers de clients satisfaits dès aujourd’hui !",
-        "subtitle": "Profitez d’une expérience d’achat fluide et de réductions exclusives en vous inscrivant.",
-        "button": "Commencer"
+    "functionnalities": {
+        "title": "Faites-nous confiance",
+        "description": "La confiance est la chose même que tout le monde dans ce monde désire, ou du moins devrait désirer les uns des autres. Qui veut avoir une amitié ou une relation sans confiance ? Personne ne le fait.",
+        "items": [
+            {
+                "title": "Conseils et astuces",
+                "desc": "Grâce à notre expérience en tant que parents et à notre formation en puériculture, nous sommes en mesure de conseiller les jeunes parents sur l’allaitement, les soins du nouveau-né et le développement de l’enfant."
+            },
+            {
+                "title": "Produits adaptés",
+                "desc": "Notre expertise en matière de vêtements de maternité nous permet d’aider les futures mamans à choisir des tenues adaptées à leur morphologie et à chaque étape de leur grossesse."
+            },
+            {
+                "title": "Nourritures et alimentations",
+                "desc": "En tant que diététiciens, nous guidons nos clients vers des choix alimentaires équilibrés en fonction de leurs besoins nutritionnels."
+            }
+        ]
+    },
+    "offers": {
+        "title": "Nos Offres",
+        "description": "Que vous soyez parent, grand-parent ou futur parent, vous trouverez chez nous tout ce dont vous avez besoin pour prendre soin de votre bébé.",
+        "items": {
+            "essential": {
+                "name": "Boo Essentiel",
+                "sub": "(actuel)",
+                "price": "Essai gratuit en 1 mois",
+                "features": [
+                    "Découverte de nos produits et nos services",
+                    "Accès aux articles et aux forums",
+                    "Accès à la liste des professionnels"
+                ]
+            },
+            "prestige": {
+                "name": "Boo Prestige",
+                "price": "500.000 Ariary",
+                "features": [
+                    "3 mois d'accès",
+                    "Accès illimités aux comptes professionnels",
+                    "Priorité sur les rendez-vous",
+                    "Accompagnement, suivi et conseils",
+                    "Offre promotionnels sur les produits associés",
+                    "4 heures par mois d'échanges / d'appels.",
+                    "Menu par mois"
+                ],
+                "cta": "Je m'abonne"
+            },
+            "privilege": {
+                "name": "Boo Privilège",
+                "price": "300.000 Ariary",
+                "features": [
+                    "3 mois d'accès",
+                    "Accès illimités aux comptes professionnels",
+                    "Offre promotionnels sur les produits associés",
+                    "Menu par mois"
+                ],
+                "cta": "Je m'abonne"
+            }
+        }
     }
 }

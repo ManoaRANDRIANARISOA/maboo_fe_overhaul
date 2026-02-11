@@ -1,31 +1,87 @@
 {
     "hero": {
-        "title": "Your favorite products, delivered to your doorstep",
-        "subtitle": "Discover a world of premium quality items with fast delivery and secure payment options.",
-        "primaryCta": "Start Shopping",
-        "secondaryCta": "Learn More",
-        "imageAlt": "E-commerce hero section"
+        "title": "Little Treasures, Big Joys",
+        "description": "Hugs, smiles and diapers: our specialty. Practical solutions for parents, laughter for babies",
+        "cta": "Our Subscriptions"
     },
-    "features": {
-        "title": "Why Shop with Us?",
+    "categories": {
+        "title": "We have it",
+        "description": "You can earn someone's trust by what you say and what your actions show. There are three types of trust: trust in family, trust in a loved one or boyfriend, and trust in friends.",
         "items": {
-            "fastDelivery": {
-                "title": "Fast Delivery",
-                "desc": "Get your orders delivered within days, not weeks."
+            "baby": {
+                "title": "For the Baby",
+                "desc": "A tender little being, full of curiosity and sweetness.",
+                "cta": "See products"
             },
-            "topQuality": {
-                "title": "Top Quality",
-                "desc": "We only offer the best products from trusted brands."
+            "both": {
+                "title": "For both",
+                "desc": "A tender little being, full of curiosity and sweetness.",
+                "cta": "See products"
             },
-            "securePayments": {
-                "title": "Secure Payments",
-                "desc": "Your payment info is encrypted and 100% safe."
+            "mother": {
+                "title": "For the Mom",
+                "desc": "Silent strength, creator of bonds, benevolent nurturer",
+                "cta": "See products"
             }
         }
     },
-    "cta": {
-        "title": "Join thousands of happy customers today!",
-        "subtitle": "Enjoy an effortless shopping experience and get exclusive discounts by signing up.",
-        "button": "Get Started"
+    "functionnalities": {
+        "title": "Trust us",
+        "description": "Trust is the very thing that everyone in this world desires, or at least should desire from one another. Who wants to have a friendship or relationship without trust? No one does.",
+        "items": [
+            {
+                "title": "Tips and Advice",
+                "desc": "Thanks to our experience as parents and our training in childcare, we are able to advise young parents on breastfeeding, newborn care, and child development."
+            },
+            {
+                "title": "Adapted Products",
+                "desc": "Our expertise in maternity clothing allows us to help future moms choose outfits adapted to their body shape and each stage of their pregnancy."
+            },
+            {
+                "title": "Food and Nutrition",
+                "desc": "As dietitians, we guide our clients towards balanced dietary choices according to their nutritional needs."
+            }
+        ]
+    },
+    "offers": {
+        "title": "Our Offers",
+        "description": "Whether you are a parent, grandparent, or future parent, you will find everything you need to take care of your baby with us.",
+        "items": {
+            "essential": {
+                "name": "Boo Essential",
+                "sub": "(current)",
+                "price": "Free 1-month trial",
+                "features": [
+                    "Discovery of our products and services",
+                    "Access to articles and forums",
+                    "Access to the list of professionals"
+                ]
+            },
+            "prestige": {
+                "name": "Boo Prestige",
+                "price": "500,000 Ariary",
+                "features": [
+                    "3 months access",
+                    "Unlimited access to professional accounts",
+                    "Priority on appointments",
+                    "Support, follow-up and advice",
+                    "Promotional offers on associated products",
+                    "4 hours per month of exchanges / calls",
+                    "Monthly menu"
+                ],
+                "cta": "Subscribe"
+            },
+            "privilege": {
+                "name": "Boo Privilege",
+                "price": "300,000 Ariary",
+                "features": [
+                    "3 months access",
+                    "Unlimited access to professional accounts",
+                    "Promotional offers on associated products",
+                    "Monthly menu"
+                ],
+                "cta": "Subscribe"
+            }
+        }
     }
 }
