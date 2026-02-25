@@ -19,7 +19,7 @@ export function HoverableProduct({ product }: HoverableProductProps) {
             <div className="relative aspect-square overflow-hidden rounded-md bg-gray-100">
                 {mainImage ? (
                     <img
-                        src={`/uploads/${mainImage}`}
+                        src={mainImage}
                         alt={product.title}
                         className="w-full h-full object-cover"
                         loading="lazy"

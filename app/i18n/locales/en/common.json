@@ -38,5 +38,22 @@
     "subtotal": "Subtotal",
     "remove": "Remove",
     "updatingCartItem": "Updating cart item...",
-    "cartItemUpdated": "Cart item updated."
+    "cartItemUpdated": "Cart item updated.",
+    "footer": {
+        "tagline": "Warm support, harmonious growth",
+        "more": {
+            "title": "More about Ma Boo",
+            "items": {
+                "about": "About",
+                "blog": "Blog",
+                "forums": "Forums"
+            }
+        },
+        "payment": {
+            "title": "Pay with"
+        },
+        "contact": {
+            "title": "Contact us on"
+        }
+    }
 }
