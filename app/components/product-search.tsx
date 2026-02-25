@@ -152,7 +152,7 @@ export function ProductSearch() {
                                                 <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg border bg-muted overflow-hidden">
                                                     {product.images?.[0] ? (
                                                         <img
-                                                            src={`/storage/${product.images[0].filename}`}
+                                                            src={product.images[0].url}
                                                             alt={product.title}
                                                             className="h-full w-full object-cover transition-transform group-hover:scale-110"
                                                         />
