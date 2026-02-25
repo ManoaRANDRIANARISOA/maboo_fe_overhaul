@@ -1,0 +1,28 @@
+feat: restore project functionality and align design with requirements
+
+Detailed changes by file:
+
+1. Assets (public/assets/ & public/maboo-logo.jpg):
+   - Restored missing images for home page (carousel, categories) and payment icons.
+   - Added new login image in public/assets/auth/login.jpg.
+   - Restored maboo-logo.jpg.
+
+2. Components (app/components/):
+   - navbar.tsx: Restored full navigation bar with search and user dropdown integration.
+   - product-search.tsx: Restored product search functionality.
+   - user-dropdown.tsx: Restored user menu dropdown.
+   - footer.tsx: 
+     - Replaced incompatible Font Awesome icons with Lucide React icons.
+     - Fixed logo path to use the correct asset.
+     - Adjusted layout and classes for proper rendering.
+
+3. Pricing Section (app/routes/frontoffice/home.tsx):
+   - Updated pricing cards design to match the target visual.
+   - Changed "Prestige" card background to yellow (#FCD34D) and scaled it up.
+   - Updated toggle icon colors for better contrast (indigo/yellow).
+
+4. Auth Page (app/routes/auth/layout.tsx):
+   - Updated layout to use the newly added login image instead of the placeholder.
+
+5. Translations (app/i18n/locales/fr/common.json):
+   - Added missing translation keys for the footer sections (tagline, more, payment, contact).

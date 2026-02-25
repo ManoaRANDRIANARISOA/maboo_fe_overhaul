@@ -38,5 +38,22 @@
     "subtotal": "Sous-total",
     "remove": "Retirer",
     "updatingCartItem": "Mise à jour de l'article...",
-    "cartItemUpdated": "Article mis à jour."
+    "cartItemUpdated": "Article mis à jour.",
+    "footer": {
+        "tagline": "Soutiens chaleureux, croissance harmonieuse",
+        "more": {
+            "title": "Plus sur Ma Boo",
+            "items": {
+                "about": "À propos",
+                "blog": "Blog",
+                "forums": "Forums"
+            }
+        },
+        "payment": {
+            "title": "Payer avec"
+        },
+        "contact": {
+            "title": "Contactez-nous sur"
+        }
+    }
 }

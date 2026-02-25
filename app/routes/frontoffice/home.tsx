@@ -318,7 +318,7 @@ export default function Home() {
                     <ul className="space-y-3 mt-4">
                       {(getList("offers.items.essential.features") as string[]).map((feature, i) => (
                         <li key={i} className="flex items-center gap-3 text-gray-600 text-sm">
-                          <ToggleIcon className="w-8 h-5 text-secondary shrink-0" />
+                          <ToggleIcon className="w-8 h-5 text-yellow-400 shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}
@@ -329,18 +329,18 @@ export default function Home() {
 
               {/* Offer 2: Prestige (Highlighted) */}
               <motion.div variants={fadeInUp} className="w-full md:w-1/3 z-10 md:-mt-4">
-                <Card className="h-full border-none shadow-2xl bg-secondary scale-105 transform">
+                <Card className="h-full border-none shadow-2xl bg-[#FCD34D] scale-105 transform">
                   <CardHeader className="text-center pb-2 pt-8">
-                    <h3 className="text-4xl font-bold mb-2 bg-gradient-to-tl from-gray-800 to-primary bg-clip-text text-transparent">
+                    <h3 className="text-4xl font-bold mb-2 text-gray-900">
                       {t("offers.items.prestige.name")}
                     </h3>
-                    <p className="text-gray-800 font-normal text-xl opacity-70">{t("offers.items.prestige.price")}</p>
+                    <p className="text-gray-800 font-normal text-xl opacity-90">{t("offers.items.prestige.price")}</p>
                   </CardHeader>
                   <CardContent className="pt-6 pb-8">
                     <ul className="space-y-3 mb-8 px-4">
                       {(getList("offers.items.prestige.features") as string[]).map((feature, i) => (
-                        <li key={i} className="flex items-center gap-3 text-gray-800">
-                          <ToggleIcon className="w-8 h-5 text-primary shrink-0" />
+                        <li key={i} className="flex items-center gap-3 text-gray-900">
+                          <ToggleIcon className="w-8 h-5 text-indigo-600 shrink-0" />
                           <span className="text-sm font-medium">{feature}</span>
                         </li>
                       ))}
@@ -366,7 +366,7 @@ export default function Home() {
                     <ul className="space-y-3 mt-4 mb-8">
                       {(getList("offers.items.privilege.features") as string[]).map((feature, i) => (
                         <li key={i} className="flex items-center gap-3 text-gray-600 text-sm">
-                          <ToggleIcon className="w-8 h-5 text-secondary shrink-0" />
+                          <ToggleIcon className="w-8 h-5 text-yellow-400 shrink-0" />
                           <span>{feature}</span>
                         </li>
                       ))}

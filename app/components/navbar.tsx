@@ -1,32 +1,28 @@
 "use client"
 
-import { Link } from "react-router"
+import { Link, Outlet } from "react-router"
 import { useUserStore } from "~/hooks/use-user"
 import { Button } from "./ui/button";
 import UserDropdown from "./user-dropdown";
 import Cart from "./cart/cart";
 import Notifications from "./notifications/notifications";
-import ProductSearch from "./product-search";
+import { ProductSearch } from "./product-search";
 import { LanguageSwitcher } from "~/components/i18n/language-switcher";
-import useRouterStore from "~/hooks/use-router-store";
-import { useTranslation } from "react-i18next";
-import type { TFunction } from "i18next";
 
-type NavbarProps = {
-    user: User | null;
-    lang: string;
-    t: TFunction;
-}
+export default function Navbar() {
+    const { user } = useUserStore();
 
-export function Navbar({ user, lang, t }: NavbarProps) {
     return (
         <header className="flex justify-between items-center px-8 py-4 shadow-sm bg-white sticky top-0 z-25 gap-4">
             <div className="flex items-center gap-8">
                 <h1>
-                    <Link to="/" className="text-2xl font-bold text-gray-800">ShopEase</Link>
+                    <Link to="/" className="flex items-center gap-2">
+                        <img src="/maboo-logo.jpg" alt="Maboo" className="h-12 w-auto object-contain" />
+                    </Link>
                 </h1>
                 <nav className="space-x-6 hidden lg:block">
-                    <Link to={`/${lang}/products`} className="text-sm font-medium text-gray-600 hover:text-gray-900">{t('common:products')}</Link>
+                    {/* Note: In your routing, links should probably include the :lang prefix */}
+                    <Link to="products" className="text-sm font-medium text-gray-600 hover:text-primary transition-colors">Products</Link>
                 </nav>
             </div>
 
@@ -42,7 +38,7 @@ export function Navbar({ user, lang, t }: NavbarProps) {
 
                 {!user ? (
                     <Button variant="default" asChild>
-                        <Link to={`/${lang}/auth`}>{t('common:logIn')}</Link>
+                        <Link to="auth">Log in</Link>
                     </Button>
                 ) : (
                     <div className="flex gap-2 items-center">
@@ -53,17 +49,5 @@ export function Navbar({ user, lang, t }: NavbarProps) {
                 )}
             </div>
         </header>
-    )
-}
-
-
-export default function () {
-    const { user } = useUserStore();
-    const { lang } = useRouterStore();
-    const { t } = useTranslation();
-
-    return <Navbar
-        user={user}
-        lang={lang}
-        t={t} />
+    );
 }
