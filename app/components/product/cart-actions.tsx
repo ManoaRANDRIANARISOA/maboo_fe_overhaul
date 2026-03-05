@@ -1,5 +1,5 @@
 // app/components/product/cart-actions.tsx
-import { useFetcher } from "react-router";
+import { useFetcher } from "react-router"; // keep import for type
 import { Button } from "~/components/ui/button";
 import { Loader2, ShoppingCart } from "lucide-react";
 import formatMoney from "~/lib/format-money";
@@ -12,6 +12,7 @@ type Props = {
     isSubmitting: boolean;
     onBuyNow: () => void;
     t: TFunction;
+    fetcher: ReturnType<typeof useFetcher>; // accept fetcher from parent
 };
 
 export function CartActions({
@@ -21,15 +22,16 @@ export function CartActions({
     isSubmitting,
     onBuyNow,
     t,
+    fetcher, // use this fetcher
 }: Props) {
-    const fetcher = useFetcher();
     const inStock = selectedVariant && selectedVariant.stock > 0;
+    const effectivePrice = selectedVariant?.effective_price ?? selectedVariant?.price ?? 0;
+    const hasDiscount = selectedVariant && effectivePrice < selectedVariant.price;
 
     return (
         <div className="p-6 rounded-[2.5rem] border border-gray-100 bg-gray-50/50 space-y-6">
-            {/* Quantity selector is now separate, but we keep the area */}
-            {/* We'll keep the form and button inside here for clarity */}
             <div className="space-y-3">
+                {/* Use fetcher.Form so the parent can listen to the result */}
                 <fetcher.Form method="post">
                     <input type="hidden" name="variant_id" value={selectedVariant?.id} />
                     <input type="hidden" name="count" value={quantity} />
@@ -62,10 +64,10 @@ export function CartActions({
                 </Button>
             </div>
 
-            {selectedVariant?.special_price && (
+            {hasDiscount && (
                 <p className="text-center text-xs text-green-600 font-medium italic">
                     {t("partnerDiscount", {
-                        amount: formatMoney(selectedVariant.price - selectedVariant.special_price),
+                        amount: formatMoney(selectedVariant.price - effectivePrice),
                     })}
                 </p>
             )}

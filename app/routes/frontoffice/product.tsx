@@ -3,7 +3,6 @@ import {
     useLoaderData,
     useNavigation,
     useFetcher,
-    useSearchParams,
     type LoaderFunctionArgs,
     redirect,
     type ActionFunctionArgs,
@@ -23,7 +22,7 @@ import { CartActions } from "~/components/product/cart-actions";
 import { TrustBadges } from "~/components/product/trust-badges";
 import placeholderImage from "~/assets/images/placeholder.svg";
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const clientLoader = async ({ params }: LoaderFunctionArgs) => {
     const { slug } = params;
     const response = slug ? await getProduct(slug) : null;
     return response?.data?.product || null;
@@ -55,7 +54,6 @@ export default function ProductPage() {
     const { t } = useTranslation("product");
     const { user } = useUserStore();
     const product = useLoaderData<Product | null>();
-    const [searchParams, setSearchParams] = useSearchParams();
 
     const [selectedOptions, setSelectedOptions] = useState<Record<number, number>>({});
     const [selectedVariant, setSelectedVariant] = useState<Variant | null>(null);
@@ -83,6 +81,8 @@ export default function ProductPage() {
     // Initialize from URL or default to first variant
     useEffect(() => {
         if (!product) return;
+
+        const { searchParams } = new URL(location.href);
 
         const variantIdParam = searchParams.get("variant");
         let initialVariant: Variant | null = null;
@@ -114,28 +114,20 @@ export default function ProductPage() {
             setSelectedVariant(null);
             setSelectedOptions({});
         }
-    }, [product, searchParams]);
+    }, [product]);
 
     // Update URL when selectedVariant changes (user selects a different variant)
     useEffect(() => {
         if (!selectedVariant) return;
-        const currentVariantId = searchParams.get("variant");
-        if (currentVariantId !== String(selectedVariant.id)) {
-            setSearchParams({ variant: String(selectedVariant.id) }, { replace: true });
-        }
-    }, [selectedVariant, setSearchParams, searchParams]);
 
-    const getEffectivePrice = (variant: Variant | null) => {
-        if (!variant) return 0;
-        return canSeeSpecial && variant.special_price !== null
-            ? variant.special_price
-            : variant.price;
-    };
+        const url = new URL(location.href);
+        url.searchParams.set("variant", String(selectedVariant.id));
+        history.replaceState({}, "", url);
 
-    const unitPrice = useMemo(
-        () => getEffectivePrice(selectedVariant),
-        [selectedVariant, canSeeSpecial]
-    );
+    }, [selectedVariant]);
+
+    // Use effective_price from variant if available, otherwise fallback to price
+    const unitPrice = selectedVariant?.effective_price ?? selectedVariant?.price ?? 0;
     const subtotal = useMemo(() => unitPrice * count, [unitPrice, count]);
 
     const handleOptionSelect = (groupId: number, optionId: number) => {
@@ -195,7 +187,7 @@ export default function ProductPage() {
                                 unitPrice={unitPrice}
                                 originalPrice={selectedVariant?.price}
                                 stock={selectedVariant?.stock ?? 0}
-                                canSeeSpecial={canSeeSpecial}
+                                appliedPromotions={selectedVariant?.applied_promotions}  // <-- add this
                                 t={t}
                             />
 
@@ -213,7 +205,6 @@ export default function ProductPage() {
                                 disabled={!selectedVariant}
                                 t={t}
                             />
-
                             <CartActions
                                 selectedVariant={selectedVariant}
                                 quantity={count}
@@ -221,6 +212,7 @@ export default function ProductPage() {
                                 isSubmitting={isSubmitting}
                                 onBuyNow={onBuyNow}
                                 t={t}
+                                fetcher={fetcher}   // <-- add this line
                             />
 
                             <TrustBadges t={t} />
